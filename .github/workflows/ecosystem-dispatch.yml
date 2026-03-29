@@ -1,0 +1,24 @@
+name: 🔗 Ecosystem Dispatch
+
+on:
+  repository_dispatch:
+    types:
+      - research_data_ready
+      - agent_task
+      - code_ready
+      - analysis_complete
+
+jobs:
+  handle-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log incoming event
+        run: |
+          echo "📡 Received: ${{ github.event.action }}"
+          echo "📦 Payload: ${{ toJSON(github.event.client_payload) }}"
+
+      - name: Route event
+        run: |
+          echo "Event type: ${{ github.event.action }}"
+          echo "Source: ${{ github.event.client_payload.source }}"
+          echo "Routing to appropriate handler..."
