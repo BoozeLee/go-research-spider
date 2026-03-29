@@ -1,0 +1,16 @@
+# CODEOWNERS
+# These owners will be requested for review when someone opens a pull request.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global ownership — all files
+* @BoozeLee
+
+# Go source files
+*.go @BoozeLee
+
+# Python bridge
+*.py @BoozeLee
+
+# Security files — require explicit review
+SECURITY.md @BoozeLee
+.github/workflows/ @BoozeLee
